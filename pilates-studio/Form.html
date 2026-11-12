@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>Brakoum's Pilates Studio Form</title>
+
+<style>
+body{
+background-color:#fff5f7;
+font-family:Arial;
+text-align:center;
+color:#8b5e5e;
+}
+
+h1{
+color:#d4af37;
+}
+
+h2{
+color:#c97c8f;
+}
+
+a{
+background-color:#d98ca3;
+color:white;
+padding:10px 20px;
+text-decoration:none;
+}
+</style>
+
+<script>
+function validation()
+{
+var name = document.form1.name.value.trim();
+var phone = document.form1.phone.value.trim();
+var email = document.form1.email.value.trim();
+var age = document.form1.age.value;
+var time = document.form1.time.value;
+
+if(name == "")
+{
+alert("Please enter your name");
+return false;
+}
+
+if(!/^[A-Za-z ]+$/.test(name))
+{
+alert("Please use letters and spaces only for your name");
+return false;
+}
+
+if(phone == "")
+{
+alert("Please enter your phone number");
+return false;
+}
+
+if(!/^[0-9]+$/.test(phone))
+{
+alert("Please use numbers only for your phone number");
+return false;
+}
+
+if(email == "")
+{
+alert("Please enter your email");
+return false;
+}
+
+if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+{
+alert("Please enter a valid email address");
+return false;
+}
+
+if(age == "")
+{
+alert("Please enter your age");
+return false;
+}
+
+if(document.form1.membership[0].checked == false &&
+document.form1.membership[1].checked == false &&
+document.form1.membership[2].checked == false)
+{
+alert("Please select a membership type");
+return false;
+}
+
+if(time == "")
+{
+alert("Please select a class time");
+return false;
+}
+
+if(document.form1.interest[0].checked == false &&
+document.form1.interest[1].checked == false &&
+document.form1.interest[2].checked == false)
+{
+alert("Please select at least one interest");
+return false;
+}
+
+alert("Thank you for registering at Brakoum's Pilates Studio!");
+return true;
+}
+
+function clearForm()
+{
+document.form1.reset();
+}
+</script>
+</head>
+
+<body>
+
+<h1>Brakoum's Pilates Studio</h1>
+
+<h2>Membership Registration Form</h2>
+
+<form name="form1" onsubmit="return validation()">
+
+Name:
+<input type="text" name="name">
+
+<br><br>
+
+Phone:
+<input type="text" name="phone" inputmode="numeric">
+
+<br><br>
+
+Email:
+<input type="email" name="email">
+
+<br><br>
+
+Age:
+<input type="number" name="age">
+
+<br><br>
+
+Membership Type:
+
+<input type="radio" name="membership"> Single Class
+
+<input type="radio" name="membership"> Weekly Package
+
+<input type="radio" name="membership"> Monthly Membership
+
+<br><br>
+
+Class Time:
+
+<select name="time">
+<option value="">Select Time</option>
+<option>Morning</option>
+<option>Afternoon</option>
+<option>Evening</option>
+</select>
+
+<br><br>
+
+Interests:
+
+<input type="checkbox" name="interest"> Pilates
+
+<input type="checkbox" name="interest"> Stretching
+
+<input type="checkbox" name="interest"> Wellness
+
+<br><br>
+
+Comments:
+
+<br>
+
+<textarea rows="5" cols="35"></textarea>
+
+<br><br>
+
+<input type="submit" value="Submit Form">
+
+<input type="button" value="Clear Form" onclick="clearForm()">
+
+</form>
+
+<br><br>
+
+<img src="empowerment_quote_pink.jpg" width="300">
+
+<br><br>
+
+<img src="services_contact_info.jpg" width="400">
+
+<br><br>
+
+<a href="index.html">Back Home</a>
+
+<br><br>
+
+</body>
+</html>
